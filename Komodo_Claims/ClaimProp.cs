@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Komodo_Claims
 {
     public enum ClaimType { Car, Home, Theft}
-    class ClaimProp
+    public class ClaimProp
     {
         public ClaimProp() { }
 

@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace Komodo_Claims
 {
-    class ClaimRepo
+    public class ClaimRepo
     {
         List<ClaimProp> _claimDirectory = new List<ClaimProp>();
         Queue<ClaimProp> _claimQueue = new Queue<ClaimProp>();
-        public void AddClaimToDirectory(ClaimProp claim)
+        public bool AddClaimToDirectory(ClaimProp claim)
         {
             foreach(ClaimProp existingClaim in _claimDirectory)
             {
                 if (existingClaim.ClaimId == claim.ClaimId)
                 {
-                    break;
+                    return false;
                 }
             }
             _claimDirectory.Add(claim);
+            return true;
         }
 
         public List<ClaimProp> ViewClaim()

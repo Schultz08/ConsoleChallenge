@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace Cafe
 {
-    class MenuRepository
+    public class MenuRepository
     {
         private readonly List<CafeMenu> _cafeDirectory = new List<CafeMenu>();
 
-        public void AddNewItem(CafeMenu item)
+        public bool AddNewItem(CafeMenu item)
         {
+            int directLengh = _cafeDirectory.Count();
             _cafeDirectory.Add(item);
+            bool wasAdd = directLengh + 1 == _cafeDirectory.Count();
+            return wasAdd;
         }
 
 

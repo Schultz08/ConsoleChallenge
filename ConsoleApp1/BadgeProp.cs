@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace BadgeAccess
 {
-    class BadgeProp
+    public class BadgeProp
     {
         public BadgeProp() { }
 

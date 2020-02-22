@@ -58,13 +58,18 @@ namespace Cafe
 
             }
         }
-    
-    
+
+
         public void AddNewMenuItem()
         {
             CafeMenu item = new CafeMenu();
             Console.WriteLine("What is the name of the item");
             item.MealName = Console.ReadLine();
+
+            Console.WriteLine("What is the Meal Number");
+            item.MealNumber = Convert.ToInt32(Console.ReadLine());
+
+
 
             Console.WriteLine("What is the items Description");
             item.Description = Console.ReadLine();

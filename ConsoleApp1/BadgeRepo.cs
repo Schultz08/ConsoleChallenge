@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace BadgeAccess
 {
-    class BadgeRepo
+    public class BadgeRepo
     {
         private readonly List<BadgeProp> _badgeDirectory = new List<BadgeProp>();
         private readonly Dictionary<int , List<string>> _keyCardDirectory = new Dictionary<int, List<string>>();
@@ -23,11 +23,14 @@ namespace ConsoleApp1
             Console.ReadKey();
         }
 
-        public void AddNewBadge(BadgeProp badge)
+        public bool AddNewBadge(BadgeProp badge)
         {
+            int directLengh = _keyCardDirectory.Count();
             Dictionary<int, List<string>> currentContent = _keyCardDirectory;
 
             currentContent.Add(badge.BadgeNumber, badge.DoorList);
+            bool wasAdd = directLengh + 1 == _keyCardDirectory.Count();
+            return wasAdd;
         }
 
 
